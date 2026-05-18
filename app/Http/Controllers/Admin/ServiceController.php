@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    // 1. Hiển thị danh sách dịch vụ hiện có
+    // 1. Hiển thị danh sách dịch vụ
     public function index()
     {
         $services = Service::all();
         return view('admin.services.index', compact('services'));
     }
 
-    // 2. Xử lý lưu dịch vụ mới khi bấm nút Submit
+    // 2. Lưu dịch vụ mới
     public function store(Request $request)
     {
         $request->validate([
@@ -37,4 +37,10 @@ class ServiceController extends Controller
 
         return redirect()->route('admin.services.index')->with('success', 'Xóa dịch vụ thành công!');
     }
+
+    // Các hàm tạm thời chưa dùng tới nhưng phải để trống để không lỗi Resource
+    public function create() {}
+    public function show($id) {}
+    public function edit($id) {}
+    public function update(Request $request, $id) {}
 }
