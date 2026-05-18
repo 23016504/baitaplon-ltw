@@ -31,7 +31,7 @@
 
                         <div>
                             <label class="block text-gray-700 text-sm font-semibold mb-2">Hình ảnh đại diện:</label>
-                            <input type="file" name="image" required 
+                            <input type="file" name="image"  
                                 class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 border border-gray-300 rounded-lg p-1.5 shadow-sm">
                         </div>
                         
@@ -52,7 +52,7 @@
                         
                         <button type="submit" 
                             class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-4 rounded-lg shadow-sm hover:shadow transition duration-200 flex justify-center items-center gap-2 text-sm mt-2">
-                            🖼️ Lưu Combo
+                             Lưu Combo
                         </button>
                     </form>
                 </div>

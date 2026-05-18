@@ -24,13 +24,16 @@ class ComboController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Tối đa 2MB
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Tối đa 2MB
             'services' => 'required|array', // Bắt buộc phải tích chọn ít nhất 1 dịch vụ
         ]);
 
         // Xử lý Upload hình ảnh lưu vào thư mục public/uploads
+        $imageName = 'no-image.png';  
+        if ($request->hasFile('image')) {
         $imageName = time() . '.' . $request->image->extension();  
         $request->image->move(public_path('uploads'), $imageName);
+        }
 
         // Tạo bản ghi Combo mới
         $combo = Combo::create([
